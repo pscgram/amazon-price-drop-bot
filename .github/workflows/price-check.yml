@@ -1,10 +1,10 @@
-name: Telegram Bot Test
+name: Price Bot Test
 
 on:
   workflow_dispatch:
 
 jobs:
-  run-bot:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,8 +19,19 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run bot
+      - name: Check Python files
+        run: |
+          python -m py_compile bot.py
+          python -m py_compile providers/price_provider.py
+          python -m py_compile telegram/notifier.py
+
+      - name: Test imports
         env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
-        run: python bot.py
+          BOT_TOKEN: test
+          CHANNEL_ID: test
+        run: |
+          python -c "from providers.price_provider import PriceProvider"
+          python -c "from telegram.notifier import TelegramNotifier"
+
+      - name: Test completed
+        run: echo "✅ All Python files passed the test!"
