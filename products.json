@@ -1,0 +1,12 @@
+[
+  {
+    "id": "product-1",
+    "asin": "B0XXXXXXXX",
+    "title": "Test Product",
+    "affiliate_url": "https://www.amazon.in/",
+    "target_price": 999,
+    "min_drop_rupees": 100,
+    "min_drop_percent": 5,
+    "enabled": true
+  }
+]
