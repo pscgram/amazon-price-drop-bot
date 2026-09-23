@@ -16,12 +16,12 @@ class PriceResult:
 class PriceProvider:
 
     def get_price(self, product):
-        """
-        This is the price-provider interface.
 
-        We will connect an authorized Amazon price-data source here.
-        """
+        # FREE TEST PRICE
+        test_price = 899
 
-        raise PriceProviderError(
-            "Price provider is not configured yet."
+        return PriceResult(
+            price=test_price,
+            checked_at=datetime.now(timezone.utc).isoformat(),
+            source="free-test"
         )
