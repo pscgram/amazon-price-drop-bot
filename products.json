@@ -1,9 +1,9 @@
 [
   {
     "id": "product-1",
-    "asin": "B0XXXXXXXX",
-    "title": "Test Product",
-    "affiliate_url": "https://www.amazon.in/",
+    "asin": "B0BDVG99J5",
+    "title": "Amazon Product",
+    "affiliate_url": "YOUR_AFFILIATE_LINK_HERE",
     "target_price": 999,
     "min_drop_rupees": 100,
     "min_drop_percent": 5,
